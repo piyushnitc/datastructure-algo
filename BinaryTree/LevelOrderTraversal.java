@@ -1,5 +1,8 @@
 package BinaryTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Also known as Breadth First Traversal
  */
@@ -38,12 +41,15 @@ public class LevelOrderTraversal {
             recursiveLevelOrder(tree.root, l);
         }
 
+        System.out.println("Iterative level order traversal");
+        iterativeLevelOrderTraversal(tree.root);
+
     }
 
     /**
      * recursive node at each level
      * l = level
-     * T.C = O(N) = since i am visiting every node.
+     * T.C = ?? for best and worst case
      */
     public static void recursiveLevelOrder(Node root, int l) {
         // base case
@@ -80,9 +86,29 @@ public class LevelOrderTraversal {
     }
 
     /**
-     * Using queue:q!
+     * Using queue
+     * traverse the tree in O(n) complexity. think how?
+     * if i traverse the tree once and put all the elements in queue for that level then i am visiting all the nodes
+     * only once
+     *
+     * T.C = O(n) as i am visiting every node only once.
      */
-    public static void iterativeLevelOrderTraversal() {
+    public static void iterativeLevelOrderTraversal(Node root) {
+        if(root == null) {
+            return;
+        }
+        Queue<Node> treeNode = new LinkedList<>();
+        treeNode.add(root);
 
+        while (! treeNode.isEmpty()) {
+            Node currentNode = treeNode.poll();
+            System.out.print(currentNode.data+"--");
+            if(currentNode.left != null) {
+                treeNode.add(currentNode.left);
+            }
+            if(currentNode.right != null) {
+                treeNode.add(currentNode.right);
+            }
+        }
     }
 }
