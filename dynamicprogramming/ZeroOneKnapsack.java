@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package dynamicprogramming;
 
 import static java.lang.Math.max;
 

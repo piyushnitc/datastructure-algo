@@ -1,4 +1,4 @@
-package DivideAndConquer;
+package divideandConquer;
 
 public class MergeSortImpl {
 }

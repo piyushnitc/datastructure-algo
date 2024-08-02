@@ -1,4 +1,4 @@
-package BinaryTree;
+package binarytree;
 
 public class DFSTraversal {
 
