@@ -1,4 +1,4 @@
-package divideandConquer;
+package divideandconquer;
 
 /**
  * Find the max sub array using
